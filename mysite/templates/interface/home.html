@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<head>
+<title>Study Material</title>
+<style>
+
+        body {
+         background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url('/static/k.jpg');
+         background-size:cover;
+        }
+</style>
+</head>
+<body>
+  <div class='container'>
+   <br><br>
+    <div class='navbar'>
+      <div class='navbar-inner nav-collapse' style="height: auto;">
+        <ul class="nav">
+          <li><a href="{% url 'department' %}">INSTITUTE STUDENT COMPANION PROGRRAMME</a></li>
+          <li><a href="{% url 'admin:index' %}">ADMIN LOGIN</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id='content' class='row-fluid'>
+    <div class='span2 sidebar' style=" background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );border-radius:23px;padding:10px">
+        <h3>Menu</h3>
+        <ul class="nav nav-tabs nav-stacked">
+          <li><a href="{% url 'list_department' %}">DEPARTMENTS</a></li>
+          <li><a href='/list_courses'>COURSES</a></li>
+          <li><a href='/list_chapter'>CHAPTERS</a></li>
+        </ul>
+      </div>
+      <div class='span8 main'  style=" background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );border-radius:23px;padding:10px">
+        {% block content %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'interface/home.html' %}
+{% block content %}
+<h4>Departments</h4><hr>
+<ul class="list-group">
+   {%for department in department%}
+  <li class="list-group-item justify-content-between">
+      <a href='/course/{{department.id}}'>{{department.title}}</a>
+  </li>
+   {%endfor%}
+</ul>
+{%endblock%}
